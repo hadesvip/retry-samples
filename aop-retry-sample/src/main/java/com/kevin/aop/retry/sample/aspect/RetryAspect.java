@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 public class RetryAspect {
 
 
-  @Pointcut("execution(public * com.kevin.aop.retry.sample.*.*(..)) && " +
+  @Pointcut("execution(public * com.kevin.aop.retry.sample.service.impl.*.*(..)) && " +
       "@annotation(com.kevin.aop.retry.sample.annotion.Retryable)")
   public void pointcut() {
 

@@ -1,5 +1,6 @@
 package com.kevin.aop.retry.sample.annotion;
 
+import com.kevin.aop.retry.sample.exception.RetryException;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -19,7 +20,7 @@ public @interface Retryable {
   /**
    * 重试触发条件
    */
-  Class<? extends Throwable> expectCondition() default RuntimeException.class;
+  Class<? extends Throwable> expectCondition() default RetryException.class;
 
   /**
    * 最大重试次数，默认3
